@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#07111f" />
+<meta name="description" content="Your arena for every sport. Explore cricket, soccer, tennis, racing and more." />
+<title>ARENA — Every Sport. One Destination.</title>
+<style>
+:root{--bg:#07111f;--panel:#0d1b2b;--panel2:#10243a;--text:#f5f8ff;--muted:#9db0c7;--blue:#1688ff;--cyan:#31d8ff;--red:#ff365c;--line:rgba(255,255,255,.09);--shadow:0 18px 50px rgba(0,0,0,.28)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% -10%,rgba(22,136,255,.2),transparent 35%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}button,input{font:inherit}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(7,17,31,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;gap:28px}.brand{display:flex;align-items:center;gap:10px;font-weight:950;letter-spacing:1.7px;font-size:22px;white-space:nowrap}.brand-mark{width:34px;height:34px;display:grid;place-items:center;border-radius:11px;background:linear-gradient(135deg,var(--blue),var(--red));box-shadow:0 8px 24px #1688ff44;font-size:18px}.brand span:last-child{color:var(--cyan)}.navlinks{display:flex;gap:25px;margin-left:24px;color:#c0cede;font-size:13px;font-weight:700}.navlinks a:hover{color:#fff}.nav-actions{margin-left:auto;display:flex;align-items:center;gap:10px}.search{position:relative}.search input{width:190px;background:#0c1a2a;border:1px solid var(--line);color:white;border-radius:12px;padding:11px 13px 11px 36px;outline:none}.search input:focus{border-color:var(--blue)}.search:before{content:"⌕";position:absolute;left:13px;top:4px;color:var(--muted);font-size:25px}.btn{border:0;border-radius:11px;padding:11px 17px;font-weight:850;cursor:pointer;transition:.2s;white-space:nowrap}.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}.btn-primary{background:linear-gradient(105deg,var(--blue),#3864ff);color:#fff;box-shadow:0 8px 24px #1688ff35}.btn-ghost{background:rgba(255,255,255,.06);border:1px solid var(--line);color:white}
+.hero{padding:55px 0 34px}.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:28px;align-items:stretch}.hero-copy{padding:26px 0 22px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:#b7e8ff;background:#0d2b46;border:1px solid #1a4c72;border-radius:999px;padding:8px 13px;font-size:11px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase}.pulse{width:7px;height:7px;border-radius:50%;background:#ff4564;box-shadow:0 0 0 5px #ff456425}.hero h1{font-size:clamp(42px,5.7vw,76px);line-height:.98;letter-spacing:-3.8px;margin:22px 0 18px;max-width:700px}.hero h1 .gradient{background:linear-gradient(95deg,#fff 5%,#64c9ff 48%,#ff5975 96%);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);font-size:16px;line-height:1.8;max-width:520px;margin:0 0 25px}.hero-buttons{display:flex;gap:12px;flex-wrap:wrap}.hero-stats{display:flex;gap:28px;margin-top:35px}.stat strong{font-size:23px;display:block;letter-spacing:-.7px}.stat span{font-size:11px;color:var(--muted);letter-spacing:.7px;text-transform:uppercase}.hero-art{min-height:390px;position:relative;overflow:hidden;border:1px solid #2d5c86;border-radius:26px;background:linear-gradient(140deg,rgba(14,45,75,.96),rgba(10,21,39,.94)),radial-gradient(circle at 80% 15%,#ff365c55,transparent 38%);box-shadow:var(--shadow);isolation:isolate}.hero-art:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(130deg,transparent 0 32px,rgba(255,255,255,.025) 33px 34px);z-index:-1}.hero-art:after{content:"";position:absolute;width:330px;height:330px;border:1px solid #60caff42;border-radius:50%;right:-25px;top:25px;box-shadow:0 0 0 30px #60caff08,0 0 0 65px #60caff06}.arena-label{position:absolute;top:24px;left:24px;font-size:11px;letter-spacing:2px;color:#a8dfff;font-weight:900}.stadium{position:absolute;left:8%;right:8%;bottom:0;height:45%;border-radius:50% 50% 0 0/20% 20% 0 0;background:linear-gradient(180deg,#123c61,#071625);border-top:2px solid #48c7ff66;box-shadow:0 -15px 50px #1688ff22}.stadium:before{content:"";position:absolute;inset:18px 10% 0;border-radius:50% 50% 0 0/20% 20% 0 0;border:1px dashed #60caff48}.ball{position:absolute;display:grid;place-items:center;border-radius:50%;box-shadow:0 20px 45px #0007,inset -8px -10px 20px #0005,inset 5px 5px 12px #ffffff50;animation:float 5s ease-in-out infinite}.ball-cricket{width:118px;height:118px;right:24%;top:26%;font-size:49px;background:radial-gradient(circle at 30% 25%,#ff7a8e,#df173e 70%);transform:rotate(-18deg)}.ball-soccer{width:74px;height:74px;left:16%;top:45%;font-size:36px;background:radial-gradient(circle at 30% 25%,#fff,#aebed0 75%);animation-delay:-1.5s}.ball-tennis{width:47px;height:47px;right:12%;top:56%;font-size:23px;background:radial-gradient(circle at 30% 25%,#e5ff85,#9ed51b 75%);animation-delay:-2.5s}.hero-tag{position:absolute;right:22px;bottom:22px;border:1px solid #ffffff25;background:#071625c9;backdrop-filter:blur(12px);border-radius:13px;padding:12px 15px}.hero-tag b{display:block;font-size:12px}.hero-tag span{font-size:10px;color:var(--muted)}@keyframes float{0%,100%{translate:0 0}50%{translate:0 -12px}}
+.ticker{overflow:hidden;border-block:1px solid var(--line);background:#0a1929}.ticker-inner{display:flex;align-items:center;gap:30px;padding:14px 0;white-space:nowrap;color:#bfd0e3;font-size:11px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase}.ticker-item{display:flex;align-items:center;gap:9px}.ticker-item i{width:6px;height:6px;background:var(--red);border-radius:50%;display:inline-block}
+.section{padding:55px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:25px}.kicker{color:var(--cyan);font-size:11px;letter-spacing:2px;font-weight:900;text-transform:uppercase}.section h2{font-size:clamp(27px,3vw,38px);letter-spacing:-1.4px;margin:8px 0 0}.section-sub{color:var(--muted);font-size:13px;line-height:1.7;margin:8px 0 0}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}.filter{border:1px solid var(--line);color:#b7c6d8;background:#0c1a2a;padding:9px 13px;border-radius:999px;font-size:12px;font-weight:800;cursor:pointer}.filter.active,.filter:hover{background:#153c60;border-color:#277bc0;color:#fff}.sports-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.sport-card{min-height:172px;position:relative;overflow:hidden;background:linear-gradient(145deg,#122940,#0b1929);border:1px solid var(--line);border-radius:18px;padding:18px;transition:.25s;cursor:pointer;display:flex;flex-direction:column;justify-content:space-between}.sport-card:hover{transform:translateY(-5px);border-color:#338ad1;box-shadow:0 15px 35px #0003}.sport-card:after{content:"";position:absolute;width:120px;height:120px;right:-35px;top:-30px;border-radius:50%;background:var(--glow,#1688ff);opacity:.14;filter:blur(3px);transition:.25s}.sport-card:hover:after{opacity:.28;transform:scale(1.2)}.card-top{display:flex;align-items:flex-start;justify-content:space-between;position:relative;z-index:1}.sport-icon{width:49px;height:49px;border-radius:15px;background:var(--iconbg,#153a5b);display:grid;place-items:center;font-size:25px;border:1px solid #ffffff0d}.arrow{color:#8098b3;font-size:21px;transition:.2s}.sport-card:hover .arrow{color:#fff;transform:translate(3px,-3px)}.sport-card h3{font-size:16px;margin:17px 0 4px;position:relative;z-index:1}.sport-card p{margin:0;color:var(--muted);font-size:11px;position:relative;z-index:1}.sport-card .mini{display:inline-flex;align-items:center;gap:6px;color:#8ce8ff;font-size:10px;font-weight:900;letter-spacing:.7px;text-transform:uppercase;margin-top:12px;position:relative;z-index:1}.sport-card .mini:before{content:"";width:5px;height:5px;background:var(--cyan);border-radius:50%}
+.featured{display:grid;grid-template-columns:1fr 1fr;gap:18px}.feature-card{position:relative;overflow:hidden;min-height:230px;padding:28px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(110deg,#102a43,#101d31)}.feature-card.red{background:linear-gradient(110deg,#38182a,#171c31)}.feature-card:after{content:attr(data-symbol);position:absolute;right:12px;bottom:-45px;font-size:180px;opacity:.09;line-height:1;transform:rotate(-12deg);pointer-events:none}.feature-card h3{font-size:25px;letter-spacing:-.8px;margin:15px 0 8px;max-width:310px;position:relative;z-index:1}.feature-card p{color:var(--muted);font-size:13px;line-height:1.7;max-width:330px;position:relative;z-index:1}.feature-card .btn{margin-top:10px;position:relative;z-index:1}.badge{display:inline-block;font-size:10px;letter-spacing:1.3px;font-weight:900;text-transform:uppercase;color:#aee8ff;background:#153d5c;border-radius:7px;padding:7px 9px}.red .badge{color:#ffc1ce;background:#5b2135}
+.cta{margin:15px 0 65px;padding:35px;border-radius:24px;background:linear-gradient(110deg,#1265bc,#1742a4 60%,#a92d4c);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:25px}.cta:after{content:"";position:absolute;right:25%;top:-100px;width:280px;height:280px;border:1px solid #ffffff25;border-radius:50%;box-shadow:0 0 0 30px #ffffff08,0 0 0 65px #ffffff06}.cta h2{font-size:clamp(25px,3vw,36px);margin:0 0 9px;letter-spacing:-1px;position:relative;z-index:1}.cta p{margin:0;color:#d9e9ff;font-size:13px;position:relative;z-index:1}.cta .btn{background:white;color:#0b2340;position:relative;z-index:1}
+footer{border-top:1px solid var(--line);padding:28px 0 35px;color:var(--muted);font-size:12px}.footer-row{display:flex;justify-content:space-between;align-items:center;gap:20px}.footer-links{display:flex;gap:18px;flex-wrap:wrap}.footer-links a:hover{color:#fff}.disclaimer{margin-top:17px;line-height:1.6;font-size:11px;color:#73879f}
+.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);background:#f5f8ff;color:#07111f;padding:13px 18px;border-radius:12px;font-size:13px;font-weight:800;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.25s;z-index:40}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:950px){.navlinks{display:none}.hero-grid{grid-template-columns:1fr}.hero-copy{padding-top:8px}.hero-art{min-height:340px}.sports-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.search input{width:160px}}
+@media(max-width:650px){.wrap{width:min(100% - 28px,1180px)}.nav{height:66px;gap:10px}.brand{font-size:18px}.brand-mark{width:30px;height:30px}.search{display:none}.nav-actions .btn{padding:10px 12px;font-size:12px}.hero{padding:30px 0 25px}.hero h1{font-size:45px;letter-spacing:-2.4px}.hero p{font-size:14px}.hero-stats{gap:18px;margin-top:26px}.stat strong{font-size:19px}.stat span{font-size:9px}.hero-art{min-height:290px}.ball-cricket{width:92px;height:92px;font-size:39px;right:23%;top:25%}.ball-soccer{width:60px;height:60px;font-size:29px}.ball-tennis{width:38px;height:38px}.section{padding:40px 0}.section-head{align-items:flex-start;flex-direction:column}.sports-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.sport-card{min-height:154px;padding:14px;border-radius:15px}.sport-icon{width:42px;height:42px;font-size:22px;border-radius:12px}.sport-card h3{font-size:14px;margin-top:13px}.sport-card p{font-size:10px}.featured{grid-template-columns:1fr}.feature-card{min-height:210px;padding:23px}.cta{padding:26px;align-items:flex-start;flex-direction:column;margin-bottom:42px}.cta:after{right:-100px}.footer-row{align-items:flex-start;flex-direction:column}.ticker-inner{gap:22px}.ticker-item{font-size:10px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#" aria-label="Arena home"><span class="brand-mark">⚡</span><span>ARENA<span>+</span></span></a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#sports">Sports</a><a href="#featured">Featured</a><a href="#explore">Explore</a>
+    </nav>
+    <div class="nav-actions">
+      <label class="search"><input id="searchInput" type="search" placeholder="Search sports..." aria-label="Search sports"></label>
+      <a class="btn btn-primary" href="https://www.fairplay247.asia/" target="_blank" rel="noopener noreferrer">Click Here ↗</a>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> The game starts here</div>
+        <h1>EVERY SPORT.<br><span class="gradient">ONE ARENA.</span></h1>
+        <p>From last-over drama to championship moments, explore your favorite sports and game categories in one high-energy destination.</p>
+        <div class="hero-buttons"><a href="#sports" class="btn btn-primary">Explore all sports&nbsp; ↗</a><a href="#featured" class="btn btn-ghost">Discover more</a></div>
+        <div class="hero-stats"><div class="stat"><strong>13+</strong><span>Categories</span></div><div class="stat"><strong>24/7</strong><span>Sports energy</span></div><div class="stat"><strong>1</strong><span>Ultimate arena</span></div></div>
+      </div>
+      <div class="hero-art" aria-label="Illustrated sports arena">
+        <div class="arena-label">WELCOME TO THE ARENA / 001</div>
+        <div class="stadium"></div>
+        <div class="ball ball-cricket" aria-hidden="true">🏏</div>
+        <div class="ball ball-soccer" aria-hidden="true">⚽</div>
+        <div class="ball ball-tennis" aria-hidden="true">🎾</div>
+        <div class="hero-tag"><b>FEEL EVERY MOMENT</b><span>One destination. Endless action.</span></div>
+      </div>
+    </div>
+  </section>
+  <div class="ticker" aria-label="Featured categories"><div class="wrap ticker-inner">
+    <span class="ticker-item"><i></i> Cricket</span><span class="ticker-item"><i></i> Soccer</span><span class="ticker-item"><i></i> Tennis</span><span class="ticker-item"><i></i> Horse Racing</span><span class="ticker-item"><i></i> Virtual Sports</span><span class="ticker-item"><i></i> Kabaddi</span><span class="ticker-item"><i></i> More to explore</span>
+  </div></div>
+  <section class="section" id="sports">
+    <div class="wrap">
+      <div class="section-head"><div><div class="kicker">Find your game</div><h2>Explore the arena</h2><p class="section-sub">Choose a category and jump straight into the action.</p></div><div id="resultCount" class="kicker">15 CATEGORIES</div></div>
+      <div class="filters" role="group" aria-label="Filter categories">
+        <button class="filter active" data-filter="all">All categories</button><button class="filter" data-filter="sports">Sports</button><button class="filter" data-filter="games">Games</button><button class="filter" data-filter="special">Special events</button>
+      </div>
+      <div class="sports-grid" id="sportsGrid">
+        <a class="sport-card" href="#featured" data-category="sports" data-name="cricket" style="--glow:#1688ff;--iconbg:#123b60"><div class="card-top"><div class="sport-icon">🏏</div><span class="arrow">↗</span></div><div><h3>Cricket</h3><p>Big hits. Bigger moments.</p><span class="mini">Explore cricket</span></div></a>
+        <a class="sport-card" href="#featured" data-category="sports" data-name="soccer football" style="--glow:#35d58b;--iconbg:#123c3b"><div class="card-top"><div class="sport-icon">⚽</div><span class="arrow">↗</span></div><div><h3>Soccer</h3><p>Every goal counts.</p><span class="mini">Explore soccer</span></div></a>
+        <a class="sport-card" href="#featured" data-category="sports" data-name="tennis" style="--glow:#b7e94b;--iconbg:#354321"><div class="card-top"><div class="sport-icon">🎾</div><span class="arrow">↗</span></div><div><h3>Tennis</h3><p>Serve up the action.</p><span class="mini">Explore tennis</span></div></a>
+        <a class="sport-card" href="#featured" data-category="sports" data-name="horse racing" style="--glow:#ff9a48;--iconbg:#4a3020"><div class="card-top"><div class="sport-icon">🏇</div><span class="arrow">↗</span></div><div><h3>Horse Racing</h3><p>Speed to the finish.</p><span class="mini">Explore racing</span></div></a>
+        <a class="sport-card" href="#featured" data-category="games" data-name="sportsbook" style="--glow:#1688ff;--iconbg:#123b60"><div class="card-top"><div class="sport-icon">📊</div><span class="arrow">↗</span></div><div><h3>Sportsbook</h3><p>Sports, stats and matchups.</p><span class="mini">View category</span></div></a>
+        <a class="sport-card" href="#featured" data-category="games" data-name="fantasy cricket" style="--glow:#8a70ff;--iconbg:#2c2858"><div class="card-top"><div class="sport-icon">🧢</div><span class="arrow">↗</span></div><div><h3>Fantasy Cricket</h3><p>Build your dream lineup.</p><span class="mini">View category</span></div></a>
+        <a class="sport-card" href="#featured" data-category="games" data-name="live card live card games" style="--glow:#ff365c;--iconbg:#4a1d32"><div class="card-top"><div class="sport-icon">🃏</div><span class="arrow">↗</span></div><div><h3>Live Card</h3><p>Cards in the spotlight.</p><span class="mini">View category</span></div></a>
+        <a class="sport-card" href="#featured" data-category="games" data-name="slot games slots" style="--glow:#ff9a48;--iconbg:#4a3020"><div class="card-top"><div class="sport-icon">🎰</div><span class="arrow">↗</span></div><div><h3>Slot Games</h3><p>Colorful arcade-style play.</p><span class="mini">View category</span></div></a>
+        <a class="sport-card" href="#featured" data-category="games" data-name="virtual sports" style="--glow:#31d8ff;--iconbg:#123e50"><div class="card-top"><div class="sport-icon">🕹️</div><span class="arrow">↗</span></div><div><h3>Virtual Sports</h3><p>Digital competition, all day.</p><span class="mini">View category</span></div></a>
+        <a class="sport-card" href="#featured" data-category="special" data-name="fifa cup winner fifa cup" style="--glow:#1688ff;--iconbg:#123b60"><div class="card-top"><div class="sport-icon">🏆</div><span class="arrow">↗</span></div><div><h3>FIFA Cup Winner</h3><p>Follow the tournament story.</p><span class="mini">Explore event</span></div></a>
+        <a class="sport-card" href="#featured" data-category="special" data-name="winner cup cup winner" style="--glow:#ffbd45;--iconbg:#49381c"><div class="card-top"><div class="sport-icon">🥇</div><span class="arrow">↗</span></div><div><h3>Winner Cup</h3><p>Championship spotlight.</p><span class="mini">Explore event</span></div></a>
+        <a class="sport-card" href="#featured" data-category="special" data-name="election elections" style="--glow:#8a70ff;--iconbg:#2c2858"><div class="card-top"><div class="sport-icon">🗳️</div><span class="arrow">↗</span></div><div><h3>Election</h3><p>Follow major public events.</p><span class="mini">Explore event</span></div></a>
+        <a class="sport-card" href="#featured" data-category="sports" data-name="kabaddi" style="--glow:#ff365c;--iconbg:#4a1d32"><div class="card-top"><div class="sport-icon">🤼</div><span class="arrow">↗</span></div><div><h3>Kabaddi</h3><p>Strength, speed and strategy.</p><span class="mini">Explore kabaddi</span></div></a>
+      </div>
+      <p id="noResults" class="section-sub" hidden>No categories match your search. Try another keyword.</p>
+    </div>
+  </section>
+  <section class="section" id="featured" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head"><div><div class="kicker">Made for fans</div><h2>More ways to get in the game</h2><p class="section-sub">A little something for every kind of sports fan.</p></div></div>
+      <div class="featured" id="explore">
+        <article class="feature-card" data-symbol="⚡"><span class="badge">For sports fans</span><h3>Live for the big moments.</h3><p>Explore your favorite sports categories in a clean, easy-to-navigate arena built for every screen.</p><a class="btn btn-primary" href="#sports">Browse sports ↗</a></article>
+        <article class="feature-card red" data-symbol="🏆"><span class="badge">Your next discovery</span><h3>Find your next favorite.</h3><p>From familiar favorites to new categories, there is always something else to explore.</p><a class="btn btn-ghost" href="#sports">See all categories ↗</a></article>
+      </div>
+    </div>
+  </section>
+  <section class="wrap">
+    <div class="cta"><div><h2>Ready to enter the arena?</h2><p>Pick a category, follow the action, and make every visit count.</p></div><a class="btn" href="#sports">Explore categories&nbsp; ↗</a></div>
+  </section>
+</main>
+<footer><div class="wrap"><div class="footer-row"><a class="brand" href="#"><span class="brand-mark">⚡</span><span>ARENA<span>+</span></span></a><div class="footer-links"><a href="#sports">Sports</a><a href="#featured">Featured</a><a href="#explore">Explore</a><a href="#top">Back to top ↑</a></div><span>© <span id="year"></span> ARENA+. All rights reserved.</span></div><p class="disclaimer">This is a front-end demo template. Category links are placeholders and should be connected to your own verified destinations. Some listed categories may be restricted by local laws; use responsibly and comply with applicable age and location requirements.</p></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const cards=[...document.querySelectorAll('.sport-card')];
+const filters=[...document.querySelectorAll('.filter')];
+const searchInput=document.getElementById('searchInput');
+const resultCount=document.getElementById('resultCount');
+const noResults=document.getElementById('noResults');
+const toast=document.getElementById('toast');
+let activeFilter='all', toastTimer;
+function updateCards(){
+  const q=(searchInput?.value||'').trim().toLowerCase();let visible=0;
+  cards.forEach(card=>{
+    const matchesFilter=activeFilter==='all'||card.dataset.category===activeFilter;
+    const matchesQuery=!q||(card.dataset.name+' '+card.innerText).toLowerCase().includes(q);
+    const show=matchesFilter&&matchesQuery;card.hidden=!show;if(show)visible++;
+  });
+  resultCount.textContent=visible+' '+(visible===1?'CATEGORY':'CATEGORIES');
+  noResults.hidden=visible!==0;
+}
+filters.forEach(btn=>btn.addEventListener('click',()=>{
+  activeFilter=btn.dataset.filter;filters.forEach(b=>b.classList.toggle('active',b===btn));updateCards();
+}));
+searchInput?.addEventListener('input',updateCards);
+function showToast(message){toast.textContent=message;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),2400)}
+cards.forEach(card=>card.addEventListener('click',event=>{
+  if(card.getAttribute('href')==='#featured'){event.preventDefault();showToast(card.querySelector('h3').textContent+' selected — connect this card to your destination.');}
+}));
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
